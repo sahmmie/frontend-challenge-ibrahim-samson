@@ -42,5 +42,8 @@
 }
 
 .min-height-130px{
-  min-height: 130px;
+    height: 150px;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: inherit;
 }

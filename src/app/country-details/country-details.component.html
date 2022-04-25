@@ -1,11 +1,16 @@
 <div class="container pt-70">
+<div class="flex align-items-center">
   <button
-    class="radius-sm bg-white shadow-sm flex-x-center py-10 px-40 cursor-pointer"
-    [routerLink]="['/home']"
-  >
-    <span class="material-icons s15-h17 mr-10"> west </span>
-    Back
-  </button>
+  class="radius-sm bg-white shadow-sm flex-x-center py-10 px-40 cursor-pointer"
+  [routerLink]="['/home']">
+  <span class="material-icons s15-h17 mr-10"> west </span>
+  Back
+</button>
+
+<div *ngIf="country?.name" class="mr-auto ml-auto">
+  <h3>{{country?.name | titlecase}} Holidays</h3>
+</div>
+</div>
 
     <div class="row mt-28">
       <div
