@@ -3,7 +3,7 @@
 This project gives a country listing with a details page of their holiday, all managed with ngrx
 
 ## URL
-`https://comingsoon.onrender.com`
+`https://worldholiday.netlify.app/`
 
 ## GITHUB ACTIONS
 Main branch is protected to take only reviewed code from develop branch
