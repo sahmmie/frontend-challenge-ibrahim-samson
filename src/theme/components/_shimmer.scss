@@ -1,0 +1,71 @@
+.shimmer {
+  .head {
+    height: 10rem;
+    border-radius: 6px;
+    &-lg {
+      min-height: 25rem;
+    }
+    @include responsive(height, 20rem, md);
+  }
+  .shine {
+    background: var(--light-grey);
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 20%,
+      #f6f7f8 40%,
+      #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 800px 104px;
+    position: relative;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    -webkit-animation-name: placeholderShimmer;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+  }
+  [class*='line'] {
+    height: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  .line {
+    &-lg {
+      height: 30px;
+    }
+    &-md-alt {
+      height: 15px;
+    }
+    &-md {
+      height: 18px;
+    }
+    &.first {
+      width: 70%;
+    }
+  }
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  @-webkit-keyframes placeholderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+
+    100% {
+      background-position: 468px 0;
+    }
+  }
+}

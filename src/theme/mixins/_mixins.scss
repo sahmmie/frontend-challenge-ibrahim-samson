@@ -1,0 +1,28 @@
+@use 'sass:math';
+@import './spacing';
+
+@mixin flex {
+  display: flex !important;
+}
+@mixin grid {
+  display: block !important;
+}
+
+@mixin row {
+  @include flex;
+  @media screen and (max-width: breakpoint(sm)) {
+    flex-wrap: wrap;
+    @include grid;
+  }
+}
+
+@mixin responsive($property, $value, $breakpoint) {
+  @if map-has-key($grid-breakpoints-down, $breakpoint) {
+    @media screen and (max-width: breakpoint($breakpoint)) {
+      #{$property}: $value !important;
+    }
+  } @else {
+    @warn "No value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($grid-breakpoints-down)}.";
+  }
+}

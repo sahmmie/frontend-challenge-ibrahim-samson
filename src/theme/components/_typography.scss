@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  font-family: 'Roboto', sans-serif;
+}
+.text-weight-400 {
+  font-weight: 400;
+}
+.text-weight-600 {
+  font-weight: 600;
+}
+.text-weight-700 {
+  font-weight: 700;
+}
+.text-weight-bolder {
+  font-weight: bolder;
+}
+.s12-h17 {
+  font-size: rem(12);
+  line-height: rem(17);
+}
+.s15-h17 {
+  font-size: rem(15);
+  line-height: rem(17);
+}
+.s17-h23 {
+  font-size: rem(17);
+  line-height: rem(23);
+}
+.s18-h24 {
+  font-size: rem(18);
+  line-height: rem(24);
+}
+
+.s20-h24 {
+  font-size: rem(20);
+  line-height: rem(24);
+}
+.s22-h27 {
+  font-size: rem(22);
+  line-height: rem(27);
+}
+.s30-h42 {
+  font-size: rem(30);
+  line-height: rem(42);
+}
+
+.text-truncated {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalise {
+  text-transform: capitalize;
+}
+.text-capitalise-fl {
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

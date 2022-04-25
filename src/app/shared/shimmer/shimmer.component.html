@@ -1,0 +1,53 @@
+<ng-container *ngIf="loaderType.type === 'list'; else detail">
+  <div class="row">
+    <div class="size-md-3 size-sm-6" *ngFor="let country of numSequence(8)">
+      <div class="column-wrapper">
+        <div class="shimmer">
+          <div class="shine head"></div>
+          <div class="shine line first"></div>
+          <div class="shine line"></div>
+          <div class="shine line"></div>
+          <div class="shine line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #detail>
+  <div class="row shimmer mt-70 detail-page align-items-center">
+    <div class="size-md-6">
+      <div class="column-wrapper">
+        <div class="shine head-lg radius-md"></div>
+      </div>
+    </div>
+    <div class="size-md-6">
+      <div class="column-wrapper">
+        <div class="pl-md-50">
+          <div class="shine line-md mb-30 w-100"></div>
+          <div class="flex mb-60">
+            <div class="flex-1 pr-10">
+              <div class="shine line"></div>
+              <div class="shine line"></div>
+              <div class="shine line"></div>
+              <div class="shine line"></div>
+              <div class="shine line"></div>
+            </div>
+            <div class="flex-1">
+              <div class="shine line"></div>
+              <div class="shine line"></div>
+              <div class="shine line"></div>
+              <div class="shine line"></div>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="shine line-lg mr-8 sh"></div>
+            <div class="shine line-lg mr-8"></div>
+            <div class="shine line-lg mr-8"></div>
+            <div class="shine line-lg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,59 @@
+<div class="container pt-70">
+  <button
+    class="radius-sm bg-white shadow-sm flex-x-center py-10 px-40 cursor-pointer"
+    [routerLink]="['/home']"
+  >
+    <span class="material-icons s15-h17 mr-10"> west </span>
+    Back
+  </button>
+
+    <div class="row mt-28">
+      <div
+        class="size-md-3 size-sm-6"
+        *ngFor="
+          let holiday of holidays;
+          let i = index
+        "
+      >
+        <div class="column-wrapper">
+          <div
+            class="country-card"
+            data-aos="fade-up"
+            data-aos-easing="ease-in-sine"
+          >
+            <div class="details min-height-130px">
+              <h6 class="mb-5 s18-h24">{{ holiday?.name }}</h6>
+              <p class="mb-5">
+                Local Name: <span>{{ holiday?.local_name }}</span>
+              </p>
+               <p class="mb-5">
+                Date: <span>{{ holiday?.date | date:'medium'}}</span>
+              </p>
+              <div *ngIf="holiday.types.length" class="flex flex-wrap">
+                <span
+                  class="mb-10 s15-h17 text-dark"
+                  *ngFor="let type of holiday?.types"
+                >
+                  {{ type | uppercase }}
+                </span>
+              </div>
+              <div *ngIf="holiday.regions.length" class="flex flex-wrap">
+                <span
+                  class="mb-10 s15-h17 text-dark"
+                  *ngFor="let region of holiday?.regions"
+                >
+                  {{ region | uppercase }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <app-shimmer
+    *ngIf="loading && !holidays.length"
+    [loaderType]="loaderType"
+  ></app-shimmer>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Broadly Country App</title>
+    <meta name="description" content="A country listing application" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/src/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      .loader {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .anime {
+        width: 10rem;
+        height: auto;
+      }
+    </style>
+    <div class="loader" id="appLoader">
+      <img src="./assets/img/relaodly-anime.gif" class="anime" alt="" />
+    </div>
+    <app-root></app-root>
+  </body>
+</html>

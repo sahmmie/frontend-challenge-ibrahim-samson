@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.shadow-md {
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 18px -5px rgba(0, 0, 0, 0.25);
+}
+.hidden {
+  display: none;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.flex-end {
+  justify-items: flex-end;
+}
+.block {
+  display: block;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.flex-x-center {
+  display: flex;
+  align-items: center;
+}
+.flex-x-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-x-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-y-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-x-center-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.radius-md {
+  border-radius: 6px;
+}
+.radius-sm {
+  border-radius: 4px;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.position-sticky {
+  position: sticky;
+}
+.top-0 {
+  top: 0;
+}
+.z-index-9 {
+  z-index: 9;
+}
+.z-index-1 {
+  z-index: 1;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.w-100 {
+  width: 100%;
+}
+.min-h-100 {
+  min-height: 100vh;
+}
+.w-100-sm {
+  @media screen and (max-width: 767.98px) {
+    width: 100%;
+  }
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.flex-1 {
+  flex: 1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.overflow-auto {
+  overflow-x: auto;
+}
+.hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hover-grey {
+  &:hover {
+    background: var(--light-grey);
+  }
+}
+.row {
+  margin: 0 -20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// NGX Pagination Customization
+.ngx-pagination .current {
+  border-radius: 10px;
+  @extend .shadow-md;
+}
+
+.darkTheme {
+  @extend .dark-theme;
+  input,
+  .navbar,
+  .dropdown ul,
+  .visited,
+  .dropdown .selected,
+  .shimmer .shine,
+  button,
+  .bg-white,
+  .country-card,
+  .ngx-pagination .current {
+    @extend .dark-theme-alt;
+  }
+  .dropdown .selected {
+    border-radius: 4px;
+  }
+  ::placeholder {
+    @extend .text-white;
+  }
+  .hover-grey {
+    &:hover {
+      @extend .dark-theme;
+    }
+  }
+  button {
+    color: var(--white) !important;
+  }
+  input.search {
+    color: var(--white) !important;
+    background-image: url('../../assets/icons/icons-white-search.svg') !important;
+    background-repeat: no-repeat !important;
+    background-position-x: rem(23) !important;
+    background-position-y: 50% !important;
+    background-size: 25px !important;
+  }
+
+  .text-grey,
+  .text-black,
+  .text-dark,
+  .ngx-pagination a {
+    @extend .text-white;
+  }
+  .details {
+    p {
+      span {
+        color: var(--off-white) !important;
+      }
+    }
+  }
+}

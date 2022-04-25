@@ -1,0 +1,35 @@
+.bg-black {
+  background: var(--black);
+}
+
+.bg-white {
+  background: var(--white);
+}
+.text-white {
+  color: var(--white);
+}
+.text-dark {
+  color: var(--dark);
+}
+.text-grey {
+  color: var(--grey);
+}
+.text-black {
+  color: var(--black);
+}
+.animate-bg {
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+.dark-theme {
+  background: var(--dark-theme);
+  @extend .animate-bg;
+  @extend .text-white;
+}
+.dark-theme-alt {
+  @extend .animate-bg;
+  background: var(--dark-theme-alt) !important;
+  * {
+    color: var(--white) !important;
+  }
+}

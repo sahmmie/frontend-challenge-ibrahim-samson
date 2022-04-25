@@ -1,0 +1,12 @@
+<div class="wrapper fadeInDown center-page">
+  <div class="p-16" id="formContent">
+    <h2 class="active mb-12"> SIGN IN </h2>
+    <div class="fadeIn first">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input type="email" id="email" formControlName="email" placeholder="Email" class="fadeIn second w-100 mb-12">
+      <input type="password" id="password" formControlName="password" placeholder="Password" class="fadeIn third w-100 mb-12">
+      <input [disabled]="!loginForm.valid" type="submit" class="fadeIn fourth">
+    </form>
+
+  </div>
+</div>

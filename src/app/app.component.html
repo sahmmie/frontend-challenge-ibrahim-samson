@@ -1,0 +1,4 @@
+<div class="min-h-100" [ngClass]="{ darkTheme: darkTheme }">
+  <app-navbar *ngIf="loggedIn" (themeEv)="darkTheme = $event"></app-navbar>
+  <router-outlet #outlet="outlet" (activate)="onActivate()"></router-outlet>
+</div>

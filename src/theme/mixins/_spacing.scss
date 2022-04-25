@@ -1,0 +1,136 @@
+// Loops through each breakpoint and creates a marging and padding
+// spacing for each spacing vaalue provided in the spacers listg
+
+// @each $prop, $abbrev in (margin: m, padding: p) {
+//   @each $size, $length in $spacers {
+//     .#{$abbrev}-#{$size} {
+//       #{$prop}: $length !important;
+//     }
+//     .#{$abbrev}t-#{$size} {
+//       #{$prop}-top: $length !important;
+//     }
+//     .#{$abbrev}r-#{$size} {
+//       #{$prop}-right: $length !important;
+//     }
+//     .#{$abbrev}l-#{$size} {
+//       #{$prop}-left: $length !important;
+//     }
+//     .#{$abbrev}y-#{$size} {
+//       #{$prop}-top: $length !important;
+//       #{$prop}-bottom: $length !important;
+//     }
+//     .#{$abbrev}x-#{$size} {
+//       #{$prop}-right: $length !important;
+//       #{$prop}-left: $length !important;
+//     }
+//   }
+// }
+
+// regualr default spacings without media query
+@each $infix, $breakpoint in $grid-breakpoints-up {
+  @media screen and (min-width: $breakpoint) {
+    // Regular spacings
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+        .#{$abbrev}-#{$size},
+        .#{$abbrev}-#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+        .#{$abbrev}t-#{$size},
+        .#{$abbrev}t-#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+        .#{$abbrev}r-#{$size},
+        .#{$abbrev}r-#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+        .#{$abbrev}b-#{$size},
+        .#{$abbrev}b-#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+        .#{$abbrev}l-#{$size},
+        .#{$abbrev}l-#{$infix}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+
+        .#{$abbrev}y-#{$size},
+        .#{$abbrev}y-#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+          #{$prop}-bottom: $length !important;
+        }
+        .#{$abbrev}x-#{$size},
+        .#{$abbrev}x-#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+          #{$prop}-left: $length !important;
+        }
+      }
+    }
+
+    // Negative margins (e.g., where `.mb-n1` is negative version of `.mb-1`)
+    @each $size, $length in $spacers {
+      @if $size != 0 {
+        .m-#{$infix}-n#{$size},
+        .m-n#{$size} {
+          margin: -$length !important;
+        }
+        .mt-#{$infix}-n#{$size},
+        .mt-n#{$size} {
+          margin-top: -$length !important;
+        }
+        .mr-#{$infix}-n#{$size},
+        .mr-n#{$size} {
+          margin-right: -$length !important;
+        }
+        .mb-#{$infix}-n#{$size},
+        .mb-n#{$size} {
+          margin-bottom: -$length !important;
+        }
+        .ml-#{$infix}-n#{$size} {
+          margin-left: -$length !important;
+        }
+        .mx-#{$infix}-n#{$size},
+        .mx-n#{$size} {
+          margin-left: -$length !important;
+          margin-right: -$length !important;
+        }
+        .my-#{$infix}-n#{$size},
+        .my-n#{$size} {
+          margin-top: -$length !important;
+          margin-bottom: -$length !important;
+        }
+      }
+    }
+
+    // Some special margin utils
+    .m-#{$infix}-auto,
+    .m-auto {
+      margin: auto !important;
+    }
+    .mt-#{$infix}-auto,
+    .mt-auto {
+      margin-top: auto !important;
+    }
+    .mr-#{$infix}-auto,
+    .mr-auto {
+      margin-right: auto !important;
+    }
+    .mb-#{$infix}-auto,
+    .mb-auto {
+      margin-bottom: auto !important;
+    }
+    .ml-#{$infix}-auto,
+    .ml-auto {
+      margin-left: auto !important;
+    }
+    .mx-#{$infix}-auto,
+    .mx-auto {
+      margin-left: auto !important;
+      margin-right: auto;
+    }
+    .my-#{$infix}-auto,
+    .my-auto {
+      margin-top: auto !important;
+      margin-bottom: auto;
+    }
+  }
+}

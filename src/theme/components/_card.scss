@@ -1,0 +1,46 @@
+.visited {
+  min-width: max-content;
+  img {
+    height: 2rem;
+    width: auto;
+  }
+}
+.country-card {
+  width: 100%;
+  border-radius: 6px;
+  @extend .shadow-md;
+  .flag {
+    img {
+      width: 100%;
+      height: 10rem;
+      @include responsive(height, 20rem, md);
+      @include responsive(height, auto, sm);
+      object-fit: cover;
+      border-radius: 6px 6px 0 0;
+    }
+  }
+  .details {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+
+.details {
+  h6 {
+    @extend .s17-h23;
+    @extend .text-black;
+    @extend .text-weight-bolder;
+  }
+  p {
+    @extend .s15-h17;
+    @extend .text-dark;
+    @extend .text-weight-700;
+    span {
+      @extend .text-weight-400;
+      @extend .text-grey;
+    }
+  }
+}
+
+.min-height-130px{
+  min-height: 130px;
+}

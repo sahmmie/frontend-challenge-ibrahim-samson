@@ -1,0 +1,66 @@
+<div class="container pt-50">
+  <div class="mb-40" *ngIf="visitedCountries.length > 0">
+    <h6 class="text-weight-700 s17-h23">Recently Visited Countries</h6>
+    <div class="overflow-auto hide-scrollbar flex-x-center py-10">
+      <div
+        class="visited radius-sm shadow-sm flex-x-center mr-5 p-12 bg-white cursor-pointer"
+        *ngFor="let country of visitedCountries"
+      >
+        <p class="s12-h17 text-grey pl-3">
+          {{ country?.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex-x-between mb-30 flex-wrap">
+    <div class="mb-10 mb-md-0 w-100-sm">
+      <input
+        type="text"
+        class="search"
+        [readonly]="loading"
+        [formControl]="searchControl"
+        placeholder="Search for a country"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="size-md-3 size-sm-6 cursor-pointer"
+      *ngFor="
+        let country of countries
+          | paginate: { itemsPerPage: 32, currentPage: this.currentPage };
+        let i = index
+      "
+      (click)="openDetail(country)"
+    >
+      <div class="column-wrapper">
+        <div
+          class="country-card"
+          data-aos="fade-up"
+          data-aos-easing="ease-in-sine"
+        >
+          <div class="details">
+            <h6 class="mb-10 s18-h24">{{ country?.name }}</h6>
+            <p class="mb-5">
+              Short Name: <span>{{ country.code }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex justify-content-center pb-30"
+    *ngIf="!loading && countries.length > 0"
+  >
+    <pagination-controls
+      (pageChange)="currentPage = $event"
+    ></pagination-controls>
+  </div>
+
+  <app-shimmer
+    [loaderType]="loaderType"
+    *ngIf="loading && countries.length === 0"
+  ></app-shimmer>
+</div>
