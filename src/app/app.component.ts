@@ -55,11 +55,11 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
     this.themeSub = this.util.theme.subscribe((theme) => {
       this.darkTheme = theme;
     });
-
-
     this.appStore.select(state => state.account).subscribe(account => {
-      if (account.email && account.password) {
+      if (account?.email && account?.password) {
         this.loggedIn = true;
+      } else {
+        this.loggedIn = false;
       }
     });
   }

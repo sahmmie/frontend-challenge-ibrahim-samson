@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     this.store.select((store) => store.account).subscribe(auth => {
-      if (!auth.email && !auth.password) {
+      if (!auth?.email && !auth?.password) {
         this.router.navigate(['/']);
       }
     });
@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     this.store.select((store) => store.account).subscribe(auth => {
-      if (!auth.email && !auth.password) {
+      if (!auth?.email && !auth?.password) {
         this.router.navigate(['/']);
       }
     });
