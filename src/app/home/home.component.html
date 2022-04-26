@@ -5,6 +5,7 @@
       <div
         class="visited radius-sm shadow-sm flex-x-center mr-5 p-12 bg-white cursor-pointer"
         *ngFor="let country of visitedCountries"
+        (click)="openDetail(country)"
       >
         <p class="s12-h17 text-grey pl-3">
           {{ country?.name }}
